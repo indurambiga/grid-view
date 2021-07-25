@@ -1,0 +1,34 @@
+<div>
+    <ngx-datatable [rows]="rows" class="material table"
+        [loadingIndicator]="loadingIndicator" [headerHeight]="50" [footerHeight]="50" [columnMode]="'force'"
+        rowHeight="auto" [reorderable]="reorderable"   [sortType]="SortType.single" >
+        <ngx-datatable-column [sortable]="true" name="Serial No" prop="id" >
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.id}}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [sortable]="true" name="First Name" prop="first_name">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.first_name}}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [sortable]="true" name="Last Name" prop="last_name">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.last_name}}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [sortable]="true" name="Email" prop="email">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                {{row.email}}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [sortable]="true" cellClass="header">
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Image
+            </ng-template>
+            <ng-template let-row="row" ngx-datatable-cell-template>
+                <img [src]="row.avatar" alt="">
+            </ng-template>
+        </ngx-datatable-column>
+    </ngx-datatable>
+</div>
